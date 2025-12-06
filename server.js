@@ -10,6 +10,9 @@ app.use(express.json());
 // koneksi ke database
 connectDB();
 
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+
 // route test
 app.get("/", (req, res) => {
   res.send("API is running...");
